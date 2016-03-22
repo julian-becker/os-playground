@@ -9,5 +9,9 @@ cd /root/noVNC
 ln -s vnc_auto.html index.html
 ./utils/launch.sh --vnc localhost:5900 &
 
+# build bootloader
+cd /host
+make
+
 # bootup system
 qemu-system-i386 -fda /host/build/boot/bootfloppy.img -boot a

@@ -24,9 +24,17 @@ RUN apt-get update \
  && apt-get install --no-install-recommends -y \
                     qemu
 
+
+RUN apt-get update \
+ && apt-get install --no-install-recommends -y \
+                    nasm \
+                    build-essential
+
+
+
 ENV DISPLAY :1
 
-RUN echo ""
+RUN echo " "
 ADD startup.sh /startup.sh
 RUN chmod 0755 /startup.sh
 
